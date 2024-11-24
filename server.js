@@ -5,7 +5,7 @@ const path = require('path');
 const config = require('./_config');
 
 // Import configuration
-const config = require('./_config');
+
 
 // Determine environment
 const env = process.env.NODE_ENV || 'development'; // Defaults to 'development'

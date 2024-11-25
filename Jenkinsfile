@@ -47,8 +47,7 @@ pipeline {
         success {
             echo 'Build, Test, and Deployment on Render Successful!'
             sh """
-            curl -v -X POST -H "Content-type: application/json" --data '{"text":"Test message from Jenkins build"}' https://hooks.slack.com/services/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
-
+            curl -v -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
             """
         }
         failure {

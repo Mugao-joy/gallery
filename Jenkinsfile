@@ -22,18 +22,14 @@ pipeline {
         stage('Build and Deploy') {
             steps {
                 // Deploy to Render by starting the server
-                sh 'node server.js'
+                sh 'node server.js &'
             }
         }
     }
     post {
         success {
             echo 'Build, Test, and Deployment Successful!'
-            sh """
-            curl -X POST -H 'Content-type: application/json' \
-            --data '{"text": "Build ID: ${env.BUILD_ID}, Deployed at: http://localhost:8080"}' \
-            https://hooks.slack.com/services/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
-            """
+            
         }
         failure {
             echo 'Pipeline Failed!'

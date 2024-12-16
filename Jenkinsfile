@@ -35,7 +35,7 @@ pipeline {
             steps {
                 script {
                     // Trigger the Render deploy hook
-                    def deployHookUrl = "https://api.render.com/deploy/srv-ct255rrtq21c73etsg90?key=LZsB3m5xlfg"
+                    def deployHookUrl = "https://gallery-joy-ip1.onrender.com/"
                     sh """
                     curl -X POST ${deployHookUrl}
                     """
